@@ -73,7 +73,7 @@ elif(int(chosse)== 5):
     var = open(token, 'r').readlines()
     for line in var:
         token = line.strip()
-        url = 'https://graph.facebook.com/'+id_post+'/pokes?access_token='+token+'&method=post'
+        url = 'https://graph.facebook.com/'+id_profile+'/pokes?access_token='+token+'&method=post'
         http = requests.post(url)
         content = http.content
         data = json.loads(content.decode("utf-8"))
