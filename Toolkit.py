@@ -17,6 +17,7 @@ while 1:
 		http = requests.post(url)
 		content = http.content
 		data = json.loads(content.decode("utf-8"))
+		print('ok')
 		if "session_key" in data:
 				a += 1
 				print("There is ") + str(a) + " Account Work" + ', number is =  ' + num
