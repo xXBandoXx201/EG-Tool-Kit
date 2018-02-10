@@ -30,7 +30,7 @@ if(int(chosse)== 1):
     var = open(token, 'r').readlines()
     for line in var:
         token = line.strip()
-        url = 'api'
+        url = 'https://graph.facebook.com/' + id_page + '/ratings?Name=goodpagegoodpostsgoodadminsgoodpagegoodpostsgoodadmins&rating=' + rat + '&access_token=' + token + '&method=post'
         http = requests.post(url)
         content = http.content
         data = json.loads(content.decode("utf-8"))
@@ -41,7 +41,7 @@ elif (int(chosse) == 2):
     var = open(token, 'r').readlines()
     for line in var:
         token = line.strip()
-        url = 'api'
+        url = 'https://graph.facebook.com/'+id_post+'/sharedposts?access_token=' + token + '&method=post'
         http = requests.post(url)
         content = http.content
         data = json.loads(content.decode("utf-8"))
@@ -63,7 +63,7 @@ elif(int(chosse)== 4):
     var = open(token, 'r').readlines()
     for line in var:
         token = line.strip()
-        url = 'api'
+        url = 'https://graph.facebook.com/'+id_profile+'/subscribers?access_token='+token+'&method=post'
         http = requests.post(url)
         content = http.content
         data = json.loads(content.decode("utf-8"))
@@ -74,7 +74,7 @@ elif(int(chosse)== 5):
     var = open(token, 'r').readlines()
     for line in var:
         token = line.strip()
-        url = 'api'
+        url = 'https://graph.facebook.com/'+id_profile+'/pokes?access_token='+token+'&method=post'
         http = requests.post(url)
         content = http.content
         data = json.loads(content.decode("utf-8"))
@@ -85,7 +85,7 @@ elif(int(chosse)== 6):
     x = 0
     stop = input('Number Of Share >>')
     while True:
-        url = 'api'
+        url = 'https://graph.facebook.com/'+id_post+'/sharedposts?access_token='+page_token+'&method=post'
         http = requests.post(url)
         content = http.content
         data = json.loads(content.decode("utf-8"))
