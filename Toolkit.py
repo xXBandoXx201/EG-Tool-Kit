@@ -19,7 +19,6 @@ auto_share = print('2.Auto Share By Token>>')
 auto_like = print('3.Auto Like By Token>>')
 auto_follow = print('4.Auto Follow By Token>>')
 auto_poke = print('5.Auto Poke By Token >>>>>')
-autoShare = print('6.Auto Share By Page Token')
 
 chosse = input('Enter Number>>')
 
@@ -79,19 +78,3 @@ elif(int(chosse)== 5):
         content = http.content
         data = json.loads(content.decode("utf-8"))
         print(data)
-elif(int(chosse)== 6):
-    id_post = input('Enter ID Of post >>')
-    page_token = input('Token of page>>')
-    x = 0
-    stop = input('Number Of Share >>')
-    while True:
-        url = 'https://graph.facebook.com/'+id_post+'/sharedposts?access_token='+page_token+'&method=post'
-        http = requests.post(url)
-        content = http.content
-        data = json.loads(content.decode("utf-8"))
-        print('ok')
-        print(data)
-        x+=1
-        if(x== int(stop)):
-            break
-                
